@@ -113,7 +113,7 @@
         <mybatis-generator-core.version>1.3.1</mybatis-generator-core.version>
         <mybatis-spring.version>1.1.1</mybatis-spring.version>
         <ibatis-sqlmap.version>3.0-beta-10</ibatis-sqlmap.version>
-        <mysql.version>5.1.26</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
         <servlet.version>3.1.0</servlet.version>
         <jcaptcha.version>1.0</jcaptcha.version>
         <filters.version>1.1.0-beta2</filters.version>
