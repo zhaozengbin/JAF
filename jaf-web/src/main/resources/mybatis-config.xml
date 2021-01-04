@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+	</typeAliases>
+	<mappers>
+		<mapper resource="com/jaf/web/pojo/xml/SysLogMapper.xml" />
+		<mapper resource="com/jaf/web/pojo/xml/SysBaseUserMapper.xml" />
+		<mapper resource="com/jaf/web/pojo/xml/SysUserMapper.xml" />
+		<mapper resource="com/jaf/web/pojo/xml/SysDictionaryMapper.xml" />
+		<mapper resource="com/jaf/web/pojo/xml/SysPermissionMapper.xml" />
+		<mapper resource="com/jaf/web/pojo/xml/SysRoleMapper.xml" />
+		<mapper resource="com/jaf/web/pojo/xml/SysRolePermissionMapper.xml" />
+		<mapper resource="com/jaf/web/pojo/xml/SysTeamMapper.xml" />
+		<mapper resource="com/jaf/web/pojo/xml/SysUserRoleMapper.xml" />
+		<mapper resource="com/jaf/web/pojo/xml/SysUserTeamMapper.xml" />
+	</mappers>
+
+
+
+
+
+
+
+
+
+</configuration>

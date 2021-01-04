@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.jaf</groupId>
+        <artifactId>jaf</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>jaf-core</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <name>jaf-core</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>http://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>http://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <properties>
+        <!-- 依赖库的版本定义 -->
+        <slf4j.version>1.2.17</slf4j.version>
+        <velocity.version>1.7</velocity.version>
+        <dom4j.version>1.6.1</dom4j.version>
+        <mysql.version>5.1.25</mysql.version>
+        <servlet.version>3.1.0</servlet.version>
+        <jsp-api.version>2.2.1-b03</jsp-api.version>
+        <xstream.version>1.4.4</xstream.version>
+        <memcached.version>3.0.1</memcached.version>
+        <ehcache.version>2.7.2</ehcache.version>
+        <slf4j-simple.version>1.7.5</slf4j-simple.version>
+        <slf4j-api.version>1.7.5</slf4j-api.version>
+        <commons-pool.version>1.6</commons-pool.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <jstl.version>1.2</jstl.version>
+        <standard.version>1.1.2</standard.version>
+        <jackson-core-lgpl.version>1.9.13</jackson-core-lgpl.version>
+        <jackson-core-asl.version>1.9.13</jackson-core-asl.version>
+        <net.sf.json.version>2.4</net.sf.json.version>
+        <org.json.version>20090211</org.json.version>
+        <spring.version>3.2.3.RELEASE</spring.version>
+        <!-- Plugin的属性定义 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.6</jdk.version>
+
+    </properties>
+
+    <dependencies>
+
+        <!-- ******************************COMMONS相关依赖****************************** -->
+        <!-- commons-pool 依赖 -->
+        <dependency>
+            <groupId>commons-pool</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>${commons-pool.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons-lang.version}</version>
+        </dependency>
+        <!-- ******************************COMMONS相关依赖****************************** -->
+
+        <!-- ******************************jstl相关依赖****************************** -->
+        <!-- jstl 依赖 -->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+        <!-- taglibs 依赖 -->
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>${standard.version}</version>
+        </dependency>
+        <!-- ******************************jstl相关依赖****************************** -->
+
+        <!-- ******************************jackson相关依赖****************************** -->
+        <!-- jackson 依赖 -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-lgpl</artifactId>
+            <version>${jackson-core-lgpl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>${jackson-core-asl.version}</version>
+        </dependency>
+        <!-- ******************************jackson相关依赖****************************** -->
+
+
+        <!-- ******************************json相关依赖****************************** -->
+        <!-- json 依赖 -->
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>${net.sf.json.version}</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${org.json.version}</version>
+        </dependency>
+        <!-- ******************************json相关依赖****************************** -->
+
+        <!-- ******************************日志框架相关依赖****************************** -->
+        <!-- log4j 实际调用slf4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- slf4j-simple 依赖 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j-simple.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- slf4j-api 依赖 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- ******************************日志框架相关依赖****************************** -->
+
+        <!-- ******************************模版框架相关依赖****************************** -->
+        <!-- velocity 依赖 -->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>${velocity.version}</version>
+        </dependency>
+        <!-- ******************************模版框架相关依赖****************************** -->
+
+        <!-- ******************************XML框架相关依赖****************************** -->
+        <!-- dom4j依赖 -->
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>${dom4j.version}</version>
+        </dependency>
+        <!-- xstream依赖 -->
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>${xstream.version}</version>
+        </dependency>
+        <!-- ******************************XML框架相关依赖****************************** -->
+
+        <!-- ******************************缓存相关依赖****************************** -->
+        <!-- memcached依赖 -->
+        <dependency>
+            <groupId>com.whalin</groupId>
+            <artifactId>Memcached-Java-Client</artifactId>
+            <version>${memcached.version}</version>
+        </dependency>
+        <!-- ehcache依赖 -->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>${ehcache.version}</version>
+        </dependency>
+        <!-- ******************************缓存相关依赖****************************** -->
+
+        <!-- ******************************sevlet相关依赖****************************** -->
+        <!-- sevlet依赖 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.version}</version>
+        </dependency>
+        <!-- sevlet-jsp依赖 -->
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>${jsp-api.version}</version>
+        </dependency>
+        <!-- ******************************sevlet相关依赖****************************** -->
+
+        <!-- ******************************数据库相关依赖 ****************************** -->
+        <!-- mysql依赖 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+        <!-- ******************************数据库相关依赖****************************** -->
+
+
+        <!-- ******************************spring框架相关依赖 ****************************** -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- ******************************spring框架相关依赖****************************** -->
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

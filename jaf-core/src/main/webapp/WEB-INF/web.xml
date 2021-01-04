@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>jaf-core</display-name>
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>jaf-core</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:log4j.properties</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring-*.xml</param-value>
+	</context-param>
+
+	<!-- 自定义标签 -->
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/easyui-tags</taglib-uri>
+			<taglib-location>classes/tld/easyui.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/jstl/core</taglib-uri>
+			<taglib-location>classes/tld/c.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/jstl/functions</taglib-uri>
+			<taglib-location>classes/tld/fn.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/jstl/fmt</taglib-uri>
+			<taglib-location>classes/tld/fmt.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+	<servlet>
+		<description>
+		</description>
+		<display-name>TestServlet</display-name>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>com.jaf.web.servlet.TestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/TestServlet</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

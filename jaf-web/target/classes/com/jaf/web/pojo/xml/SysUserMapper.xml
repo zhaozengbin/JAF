@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jaf.web.dao.ISysUserDao">
+	<!-- Result Map -->
+	<resultMap id="BaseResultMap" type="com.jaf.web.pojo.SysUser">
+		<result column="id" property="id" />
+		<result column="baseId" property="baseId" />
+		<result column="number" property="number" />
+		<result column="email" property="email" />
+		<result column="mobilePhone" property="mobilePhone" />
+		<result column="officePhone" property="officePhone" />
+		<result column="realName" property="realName" />
+	</resultMap>
+
+	<!-- sys_user table all fields -->
+	<sql id="Base_Column_List">
+		id,baseId,number,email,mobilePhone,officePhone,realName
+	</sql>
+
+
+	<!-- 查询条件 -->
+	<sql id="Example_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="baseId != null">
+				and baseId = #{baseId}
+			</if>
+			<if test="number != null and number != ''">
+				and number = #{number}
+			</if>
+			<if test="email != null and email != ''">
+				and email = #{email}
+			</if>
+			<if test="mobilePhone != null and mobilePhone != ''">
+				and mobilePhone = #{mobilePhone}
+			</if>
+			<if test="officePhone != null and officePhone != ''">
+				and officePhone = #{officePhone}
+			</if>
+			<if test="realName != null and realName != ''">
+				and realName = #{realName}
+			</if>
+		</trim>
+	</sql>
+
+
+	<!-- 插入记录 -->
+	<insert id="insert" parameterType="Object">
+		<selectKey resultType="java.lang.Integer" order="AFTER"
+			keyProperty="id">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into
+		sys_user(id,baseId,number,email,mobilePhone,officePhone,realName)
+		values(#{id},#{baseId},#{number},#{email},#{mobilePhone},#{officePhone},#{realName})
+	</insert>
+
+	<!-- 根据id，修改记录 -->
+	<update id="update" parameterType="Object">
+		update sys_user set
+		baseId=#{baseId},number=#{number},email=#{email},mobilePhone=#{mobilePhone},officePhone=#{officePhone},realName=#{realName}
+		where id=#{id}
+	</update>
+
+	<!-- 修改记录，只修改只不为空的字段 -->
+	<update id="updateBySelective" parameterType="Object">
+		update sys_user set
+		<trim suffixOverrides=",">
+			<if test="baseId != null  ">
+				baseId=#{baseId},
+			</if>
+			<if test="number != null  and number != '' ">
+				number=#{number},
+			</if>
+			<if test="email != null  and email != '' ">
+				email=#{email},
+			</if>
+			<if test="mobilePhone != null  and mobilePhone != '' ">
+				mobilePhone=#{mobilePhone},
+			</if>
+			<if test="officePhone != null  and officePhone != '' ">
+				officePhone=#{officePhone},
+			</if>
+			<if test="realName != null  and realName != '' ">
+				realName=#{realName},
+			</if>
+		</trim>
+		where id=#{id}
+	</update>
+
+	<!-- 删除记录 -->
+	<delete id="delete" parameterType="Object">
+		delete from sys_user where id
+		= #{id}
+	</delete>
+
+	<!-- 根据id查询 系统用户表 -->
+	<select id="queryById" resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from sys_user where id = #{id}
+	</select>
+
+	<!-- 系统用户表 列表总数 -->
+	<select id="queryByCount" resultType="java.lang.Integer"
+		parameterType="Object">
+		select count(1) from sys_user
+		<include refid="Example_Where_Clause" />
+	</select>
+
+	<!-- 查询系统用户表列表 -->
+	<select id="queryByList" resultMap="BaseResultMap"
+		parameterType="Object">
+		select
+		<include refid="Base_Column_List" />
+		from sys_user
+		<include refid="Example_Where_Clause" />
+		<if test="pager.orderCondition != null and pager.orderCondition != ''">
+			${pager.orderCondition}
+		</if>
+		<if
+			test="pager.mysqlQueryCondition != null and pager.mysqlQueryCondition != ''">
+			${pager.mysqlQueryCondition}
+		</if>
+	</select>
+	<!-- 查询系统基础用户表列表 -->
+	<select id="queryByDetailList" resultMap="BaseResultMap"
+		parameterType="Object">
+		SELECT
+		su.id,
+		su.baseId,
+		su.number,
+		su.email,
+		su.mobilePhone,
+		su.officePhone,
+		su.realName,
+		sbu.userName,
+		sbu.PASSWORD,
+		sbu.STATUS,
+		sbu.createTime,
+		sbu.createUser,
+		GROUP_CONCAT(
+		DISTINCT (sur.roleId) SEPARATOR ',')
+		roleId,
+		GROUP_CONCAT(
+		DISTINCT (sut.teamId) SEPARATOR ',') teamId,
+		GROUP_CONCAT(
+		DISTINCT
+		(sr.roleName) SEPARATOR ',') roleName,
+		GROUP_CONCAT(
+		DISTINCT
+		(st.teamName) SEPARATOR ',') teamName
+		FROM
+		sys_user su
+		INNER JOIN
+		sys_base_user sbu ON su.baseId = sbu.id
+		RIGHT JOIN
+		sys_user_role sur ON sbu.id = sur.userId
+		RIGHT JOIN sys_user_team sut
+		ON sbu.id = sut.userId
+		LEFT JOIN sys_role
+		sr ON sur.roleId = sr.id
+		LEFT
+		JOIN sys_team st ON sut.teamId = st.id
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="createUser != null">
+				and sbu.createUser = #{createUser} or sbu.id = #{baseId}
+			</if>
+			<if test="userName != null and userName != ''">
+				and sbu.userName = #{userName}
+			</if>
+			<if test="roleName != null and roleName != ''">
+				and sr.roleName = #{roleName}
+			</if>
+			<if test="teamName != null and teamName != ''">
+				and st.teamName = #{teamName}
+			</if>
+		</trim>
+		GROUP BY sbu.id
+		<if test="pager.orderCondition != null and pager.orderCondition != ''">
+			${pager.orderCondition}
+		</if>
+		<if
+			test="pager.mysqlQueryCondition != null and pager.mysqlQueryCondition != ''">
+			${pager.mysqlQueryCondition}
+		</if>
+	</select>
+	<!-- 查询系统基础用户表列表 -->
+	<select id="queryDetailById" resultMap="BaseResultMap"
+		parameterType="Object">
+		SELECT
+		su.id,
+		su.baseId,
+		su.number,
+		su.email,
+		su.mobilePhone,
+		su.officePhone,
+		su.realName,
+		sbu.userName,
+		sbu.PASSWORD,
+		sbu.STATUS,
+		sbu.createTime,
+		sbu.createUser,
+		GROUP_CONCAT(
+		DISTINCT (sur.roleId) SEPARATOR ',')
+		roleId,
+		GROUP_CONCAT(
+		DISTINCT (sut.teamId) SEPARATOR ',') teamId,
+		GROUP_CONCAT(
+		DISTINCT
+		(sr.roleName) SEPARATOR ',') roleName,
+		GROUP_CONCAT(
+		DISTINCT
+		(st.teamName) SEPARATOR ',') teamName
+		FROM
+		sys_user su
+		INNER JOIN
+		sys_base_user sbu ON su.baseId = sbu.id
+		RIGHT JOIN
+		sys_user_role sur ON sbu.id = sur.userId
+		RIGHT JOIN sys_user_team sut
+		ON sbu.id = sut.userId
+		LEFT JOIN sys_role
+		sr ON sur.roleId = sr.id
+		LEFT
+		JOIN sys_team st ON sut.teamId = st.id
+		where su.id = #{id}
+	</select>
+</mapper>

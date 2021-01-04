@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xsi:noNamespaceSchemaLocation="xsd/ui.xsd">
+	<js>
+		<!-- Javascript -->
+		<!-- JQuery -->
+		<jsNode>
+			<name>jquery</name>
+			<groupId>JQuery</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/jquery/jquery-1.8.3.js</src>
+			<version>1.8.3</version>
+		</jsNode>
+		<jsNode>
+			<name>jquery.min</name>
+			<groupId>JQuery-min</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/jquery/jquery-1.8.3.min.js</src>
+			<version>1.8.3</version>
+		</jsNode>
+		<jsNode>
+			<name>jquery.cookie</name>
+			<groupId>JQuery</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/jquery/jquery.cookie.js</src>
+			<version></version>
+		</jsNode>
+		<jsNode>
+			<name>jquery-jrumble</name>
+			<groupId>JQuery</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/jquery/jquery-jrumble.js</src>
+			<version></version>
+		</jsNode>
+		<jsNode>
+			<name>jquery.tipsy</name>
+			<groupId>JQuery</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/jquery/jquery.tipsy.js</src>
+			<version></version>
+		</jsNode>
+		<!-- EasyUI -->
+		<jsNode>
+			<name>jquery.easyui.min</name>
+			<groupId>EasyUI</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/easyui/jquery.easyui.min.1.3.2.js</src>
+			<version>1.3.2</version>
+		</jsNode>
+		<jsNode>
+			<name>easyui-lang-zh_CN</name>
+			<groupId>EasyUI</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/easyui/locale/easyui-lang-zh_CN.js</src>
+		</jsNode>
+		<jsNode>
+			<name>easyuiextend</name>
+			<groupId>EasyUI</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/easyui/easyuiextend.js</src>
+		</jsNode>
+		<jsNode>
+			<name>datagrid-scrollview</name>
+			<groupId>EasyUI</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/easyui/extends/datagrid-scrollview.js</src>
+		</jsNode>
+		<jsNode>
+			<name>leftmenu</name>
+			<groupId>Accordion</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/accordion/js/leftmenu.js</src>
+		</jsNode>
+		<!-- Tool -->
+		<jsNode>
+			<name>dataformat</name>
+			<groupId>Tool</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/tools/dataformat.js</src>
+		</jsNode>
+		<jsNode>
+			<name>tool</name>
+			<groupId>Tool</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/tools/tool.js</src>
+		</jsNode>
+		<jsNode>
+			<name>lhgdialog.min</name>
+			<groupId>Tool</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/lhgDialog/lhgdialog.min.js</src>
+		</jsNode>
+		<jsNode>
+			<name>curdtools</name>
+			<groupId>Tool</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/tools/curdtools.js</src>
+		</jsNode>
+		<jsNode>
+			<name>Map</name>
+			<groupId>Tool</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/tools/Map.js</src>
+		</jsNode>
+		<!-- JQueryUI -->
+		<jsNode>
+			<name>jquery-ui.custom.min</name>
+			<groupId>JQueryUI</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/jquery-ui/js/jquery-ui-1.9.2.custom.min.js</src>
+			<version>1.9.2</version>
+		</jsNode>
+
+		<!-- prohibitutil -->
+		<jsNode>
+			<name>prohibitutil</name>
+			<groupId>Prohibit</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/tools/prohibitutil.js</src>
+		</jsNode>
+
+		<!-- prohibitutil -->
+		<jsNode>
+			<name>manhua_msgTips</name>
+			<groupId>TopTip</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/toptip/manhua_msgTips.js</src>
+		</jsNode>
+		<!-- Validform -->
+		<jsNode>
+			<name>form</name>
+			<groupId>Validform</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/Validform/js/form.js</src>
+		</jsNode>
+		<jsNode>
+			<name>Validform</name>
+			<groupId>Validform</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/Validform/js/Validform_v5.3.1_min.js</src>
+			<version>5.3.1</version>
+		</jsNode>
+		<jsNode>
+			<name>datatype</name>
+			<groupId>Validform</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/Validform/js/datatype.js</src>
+		</jsNode>
+		<jsNode>
+			<name>jquery.jqtransform</name>
+			<groupId>Validform</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/Validform/plugin/jqtransform/jquery.jqtransform.js</src>
+		</jsNode>
+		<jsNode>
+			<name>passwordStrength-min</name>
+			<groupId>Validform</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/Validform/plugin/passwordStrength/passwordStrength-min.js</src>
+		</jsNode>
+		<!-- Upload -->
+		<jsNode>
+			<name>uploadify</name>
+			<groupId>Upload</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/uploadify/jquery.uploadify-3.1.js</src>
+		</jsNode>
+		<!-- lhgDialog -->
+		<jsNode>
+			<name>lhgdialog</name>
+			<groupId>lhgDialog</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/lhgDialog/lhgdialog.min.js?skin=iblue</src>
+		</jsNode>
+		<!-- WdatePicker -->
+		<jsNode>
+			<name>WdatePicker</name>
+			<groupId>WdatePicker</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/My97DatePicker/WdatePicker.js</src>
+		</jsNode>
+		<!-- WdatePicker -->
+		<jsNode>
+			<name>jquery.ui.touch</name>
+			<groupId>QapTcha</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/QapTcha/jquery.ui.touch.js</src>
+		</jsNode>
+		<jsNode>
+			<name>QapTcha.jquery.min</name>
+			<groupId>QapTcha</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/QapTcha/QapTcha.jquery.min.js</src>
+		</jsNode>
+		<jsNode>
+			<name>QapTcha.jquery</name>
+			<groupId>QapTcha</groupId>
+			<type>text/javascript</type>
+			<src>plugin/ui/QapTcha/QapTcha.jquery.js</src>
+		</jsNode>
+
+	</js>
+
+	<!-- Css -->
+	<css>
+		<!-- EasyUI -->
+		<cssNode>
+			<name>icons</name>
+			<groupId>Accordion</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/accordion/css/icons.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+		<cssNode>
+			<name>accordion</name>
+			<groupId>Accordion</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/accordion/css/accordion.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+		<cssNode>
+			<id>easyuiTheme</id>
+			<name>easyui</name>
+			<groupId>EasyUI</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/easyui/themes/default/easyui.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+		<cssNode>
+			<name>icon</name>
+			<groupId>EasyUI</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/easyui/themes/icon.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+		<!-- JQueryUI -->
+		<cssNode>
+			<name>jquery-ui.custom.min</name>
+			<groupId>JQueryUI</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/jquery-ui/css/ui-lightness/jquery-ui-1.9.2.custom.min.css</href>
+			<rel>stylesheet</rel>
+			<version>1.9.2</version>
+		</cssNode>
+
+		<!-- JQueryUI -->
+		<cssNode>
+			<name>toptip</name>
+			<groupId>TopTip</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/toptip/css/css.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+		<!-- Validform -->
+		<cssNode>
+			<name>divfrom</name>
+			<groupId>Validform</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/Validform/css/divfrom.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+		<cssNode>
+			<name>style</name>
+			<groupId>Validform</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/Validform/css/style.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+		<cssNode>
+			<name>tablefrom</name>
+			<groupId>Validform</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/Validform/css/tablefrom.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+		<cssNode>
+			<name>jqtransform</name>
+			<groupId>Validform</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/Validform/plugin/jqtransform/jqtransform.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+
+		<!-- Upload -->
+		<cssNode>
+			<name>uploadify</name>
+			<groupId>Upload</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/uploadify/css/uploadify.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+		<!-- lhgDialog -->
+		<cssNode>
+			<name>iblue</name>
+			<groupId>lhgDialog</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/lhgDialog/skins/iblue.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+		<!-- QapTcha -->
+		<cssNode>
+			<name>QapTcha.jquery</name>
+			<groupId>QapTcha</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/QapTcha/QapTcha.jquery.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+
+		<!-- tools -->
+		<cssNode>
+			<name>common</name>
+			<groupId>Tool</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/tools/css/common.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+
+		<!-- Validform -->
+		<cssNode>
+			<name>validform.style</name>
+			<groupId>Validform</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/Validform/css/style.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+		<cssNode>
+			<name>validform.tablefrom</name>
+			<groupId>Validform</groupId>
+			<type>text/css</type>
+			<href>plugin/ui/Validform/css/tablefrom.css</href>
+			<rel>stylesheet</rel>
+		</cssNode>
+	</css>
+</project>

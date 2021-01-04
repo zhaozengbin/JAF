@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="project">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="js">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="jsNode" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<!--CSS 引入标签 name参数 -->
+										<xs:element name="name" type="xs:string" />
+										<!-- 引入标签组名称 -->
+										<xs:element name="groupId" type="groupIdList" />
+										<!-- 引入标签类型 -->
+										<xs:element name="type" type="xs:string" default="text/javascript" />
+										<!-- 引入标签地址 -->
+										<xs:element name="src" type="xs:string" />
+										<!-- 引入标签版本 -->
+										<xs:element name="version" type="xs:string"
+											minOccurs="0" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="css">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="cssNode" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<!--CSS 引入标签 id参数 -->
+										<xs:element name="id" type="xs:string" minOccurs="0" />
+										<!-- 引入标签名称 -->
+										<xs:element name="name" type="xs:string" />
+										<!-- 引入标签组名称 -->
+										<xs:element name="groupId" type="groupIdList" />
+										<!-- 引入标签类型 -->
+										<xs:element name="type" type="xs:string" default="text/css" />
+										<!-- 引入标签地址 -->
+										<xs:element name="href" type="xs:string" />
+										<!-- CSS 引入标签 rel参数 -->
+										<xs:element name="rel" type="xs:string" default="stylesheet" />
+										<!-- 引入标签版本 -->
+										<xs:element name="version" type="xs:string"
+											minOccurs="0" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- simpleType 提供选项 -->
+	<xs:simpleType name="groupIdList">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="JQuery" />
+			<xs:enumeration value="JQuery-min" />
+			<xs:enumeration value="EasyUI" />
+			<xs:enumeration value="DatePicker" />
+			<xs:enumeration value="JQueryUI" />
+			<xs:enumeration value="Prohibit" />
+			<xs:enumeration value="Designer" />
+			<xs:enumeration value="TopTip" />
+			<xs:enumeration value="Tool" />
+			<xs:enumeration value="Validform" />
+			<xs:enumeration value="Upload" />
+			<xs:enumeration value="lhgDialog" />
+			<xs:enumeration value="base" />
+			<xs:enumeration value="WdatePicker" />
+			<xs:enumeration value="QapTcha" />
+			<xs:enumeration value="Accordion" />
+			<xs:enumeration value="Validform" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
