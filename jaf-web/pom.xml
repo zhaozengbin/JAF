@@ -86,7 +86,7 @@
         <sax.version>2.0.1</sax.version>
         <saxpath.version>1.0-FCS</saxpath.version>
         <hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
-        <httpclient.version>4.3.1</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <httpclient-cache.version>4.3.1</httpclient-cache.version>
         <httpcore.version>4.3</httpcore.version>
         <httpmime.version>4.3.1</httpmime.version>
