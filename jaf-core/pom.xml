@@ -76,7 +76,7 @@
         <jackson-core-asl.version>1.9.13</jackson-core-asl.version>
         <net.sf.json.version>2.4</net.sf.json.version>
         <org.json.version>20090211</org.json.version>
-        <spring.version>3.2.3.RELEASE</spring.version>
+        <spring.version>5.3.18</spring.version>
         <!-- Plugin的属性定义 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.6</jdk.version>
