@@ -122,7 +122,7 @@
         <urlrewrite.version>1.2</urlrewrite.version>
         <xstream.version>1.4.4</xstream.version>
         <xalan.version>2.7.1</xalan.version>
-        <spring.version>3.1.1.RELEASE</spring.version>
+        <spring.version>5.2.21.RELEASE</spring.version>
         <standard.version>1.1.2</standard.version>
         <!-- Plugin的属性定义 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
