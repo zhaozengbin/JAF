@@ -94,7 +94,7 @@
         <jaxp-api.version>1.3</jaxp-api.version>
         <jdbc-stdext.version>2.0</jdbc-stdext.version>
         <jmagick.version>6.6.9</jmagick.version>
-        <jsoup.version>1.7.2</jsoup.version>
+        <jsoup.version>1.15.3</jsoup.version>
         <jstl.version>1.2</jstl.version>
         <jackson-core-lgpl.version>1.9.13</jackson-core-lgpl.version>
         <jackson-core-asl.version>1.9.13</jackson-core-asl.version>
